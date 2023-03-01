@@ -14,10 +14,11 @@ class Employee_wage
       int workingday=1;
       int monthday=1;
       int monthlywage=0;
+      int workinghour=0;
       int absent=0;
      Random rn=new Random();
 
-     while(workingday!=20&&monthday!=30)
+     while(workingday!=20&&workinghour<=100)
      {
          int check=rn.nextInt(3);
 
@@ -26,12 +27,14 @@ class Employee_wage
              case 0:
                  fullDayWage = perHourWage * fullTimeHour;
                  monthlywage+=fullDayWage;
+                 workinghour+=fullTimeHour;
                  monthday++;
                  workingday++;
                  break;
              case 1:
                  halfDayWage = perHourWage * partTimeHour;
                  monthlywage+=halfDayWage;
+                 workinghour+=partTimeHour;
                  monthday++;
                  workingday++;
                  break;
@@ -46,6 +49,6 @@ class Employee_wage
      System.out.println("absent in month :"+absent);
      System.out.println("working day :"+workingday);
      System.out.println("monthday :"+monthday);
-
+     System.out.println("total working hour :"+workinghour);
  }
 }
