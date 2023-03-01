@@ -11,25 +11,41 @@ class Employee_wage
      int partTimeHour=4;
       int fullDayWage;
      int halfDayWage;
-
+      int workingday=1;
+      int monthday=1;
+      int monthlywage=0;
+      int absent=0;
      Random rn=new Random();
-     int check=rn.nextInt(3);
 
-     switch (check)
+     while(workingday!=20&&monthday!=30)
      {
-         case 0:
-             fullDayWage=perHourWage*fullTimeHour;
-             System.out.println("Employee is Present for full day \nfullday wage:"+fullDayWage);
-             break;
-         case 1:
-             halfDayWage=perHourWage*partTimeHour;
-             System.out.println("Employee is Present for half day \nhalfday wage:"+halfDayWage);
-             break;
-         case 2:
-             System.out.println("Employee is Absent\ndaily wage is: 0");
-             break;
+         int check=rn.nextInt(3);
 
+         switch (check)
+         {
+             case 0:
+                 fullDayWage = perHourWage * fullTimeHour;
+                 monthlywage+=fullDayWage;
+                 monthday++;
+                 workingday++;
+                 break;
+             case 1:
+                 halfDayWage = perHourWage * partTimeHour;
+                 monthlywage+=halfDayWage;
+                 monthday++;
+                 workingday++;
+                 break;
+             case 2:
+                 absent++;
+                 monthday++;
+                 break;
+
+         }
      }
+     System.out.println("monthly wage :"+monthlywage);
+     System.out.println("absent in month :"+absent);
+     System.out.println("working day :"+workingday);
+     System.out.println("monthday :"+monthday);
 
  }
 }
