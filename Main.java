@@ -5,6 +5,6 @@ public class Main {
     {
         System.out.println(" Welcome to Employee Wage Computation Program");
         Employee_wage ew=new Employee_wage();
-        ew.Attendance();
+        ew.Wage();
     }
 }
