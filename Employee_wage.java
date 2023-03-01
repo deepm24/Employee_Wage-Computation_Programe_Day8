@@ -7,18 +7,24 @@ class Employee_wage
  public  void Wage()
  {
      int perHourWage=20;
-     int fullDayHour=8;
+     int fullTimeHour=8;
+     int partTimeHour=4;
       int perDayWage;
      Random rn=new Random();
-     int a=rn.nextInt(2);
+     int a=rn.nextInt(3);
      if (a==0)
      {
-         perDayWage=perHourWage*fullDayHour;
-         System.out.println("Employee is Present \n Daily wage:"+perDayWage);
+         perDayWage=perHourWage*fullTimeHour;
+         System.out.println("Employee is Present for full day \nDaily wage:"+perDayWage);
+     }
+    else if (a==1)
+     {
+         perDayWage=perHourWage*partTimeHour;
+         System.out.println("Employee is Present for half day \nDaily wage:"+perDayWage);
      }
      else
      {
-         System.out.println("Employee is Absent\n daily wage is: 0");
+         System.out.println("Employee is Absent\ndaily wage is: 0");
      }
  }
 }
